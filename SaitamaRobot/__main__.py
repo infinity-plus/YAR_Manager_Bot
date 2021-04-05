@@ -233,21 +233,15 @@ def start(update: Update, context: CallbackContext):
                                 text="🚑 Support Group",
                                 url=f"https://t.me/{SUPPORT_CHAT}",
                             ),
-                            InlineKeyboardButton(
+                           InlineKeyboardButton(
                                 text="🔔 Updates Channel",
-                                url="https://t.me/OnePunchUpdates",
+                                url="https://t.me/YARBotUpdates",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="🧾 Getting started guide",
-                                url="https://t.me/OnePunchUpdates/29",
-                            )
-                        ],
-                        [
-                            InlineKeyboardButton(
                                 text="🗄 Source code",
-                                url="https://github.com/AnimeKaizoku/SaitamaRobot",
+                                url="https://github.com/YAIFoundation/YAR_Manager_Bot",
                             )
                         ],
                     ]
