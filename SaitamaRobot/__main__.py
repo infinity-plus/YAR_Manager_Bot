@@ -7,7 +7,6 @@ from typing import Optional
 from SaitamaRobot import (
     ALLOW_EXCL,
     CERT_PATH,
-    DONATION_LINK,
     LOGGER,
     OWNER_ID,
     PORT,
@@ -580,7 +579,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 #Owner Id and Donation link should be changed here!
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
