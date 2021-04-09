@@ -1,6 +1,10 @@
 # We're using Debian Slim Buster image
 FROM python:3.8.5-slim-buster
 
+RUN mkdir ./SaitamaRobot
+RUN chmod 777 ./SaitamaRobot
+WORKDIR /SaitamaRobot
+
 ENV PIP_NO_CACHE_DIR 1
 
 RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
@@ -65,16 +69,11 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/SaitamaRobot
-RUN git clone -b shiken https://github.com/AnimeKaizoku/SaitamaRobot /root/SaitamaRobot
-WORKDIR /root/SaitamaRobot
-
-#Copy config file to /root/SaitamaRobot/SaitamaRobot
-COPY ./SaitamaRobot/sample_config.py ./SaitamaRobot/config.py* /root/SaitamaRobot/SaitamaRobot/
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+COPY . .
 
 ENV PATH="/home/bot/bin:$PATH"
-
-# Install requirements
-RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
 CMD ["python3","-m","SaitamaRobot"]
