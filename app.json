@@ -1,8 +1,8 @@
 {
-    "name": "SaitamaRobot",
+    "name": "YARBot",
     "description": "An Anime themed Telegram group management bot.",
     "keywords": ["telegram", "anime", "group", "manager", "Saitama"],
-    "repository": "https://github.com/AnimeKaizoku/SaitamaRobot",
+    "repository": "https://github.com/AnimeKaizoku/YARBot",
     "stack": "container",
     "env": {
         "TOKEN": {
@@ -157,9 +157,7 @@
             "size": "free"
         }
     },
-    "addons": [
-        {
-            "plan": "heroku-postgresql"
-        }
-    ]
+    "addons": [{
+        "plan": "heroku-postgresql"
+    }]
 }

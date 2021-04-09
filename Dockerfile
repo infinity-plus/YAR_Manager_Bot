@@ -1,9 +1,9 @@
 # We're using Debian Slim Buster image
 FROM python:3.8.5-slim-buster
 
-RUN mkdir ./SaitamaRobot
-RUN chmod 777 ./SaitamaRobot
-WORKDIR /SaitamaRobot
+RUN mkdir ./YARBot
+RUN chmod 777 ./YARBot
+WORKDIR /YARBot
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -68,7 +68,7 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/SaitamaRobot
+# Copy Python Requirements to /root/YARBot
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . .
@@ -76,4 +76,4 @@ COPY . .
 ENV PATH="/home/bot/bin:$PATH"
 
 # Starting Worker
-CMD ["python3","-m","SaitamaRobot"]
+CMD ["python3","-m","YARBot"]
