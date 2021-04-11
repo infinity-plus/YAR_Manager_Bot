@@ -18,7 +18,8 @@ from YARBot import (
     StartTime,
     telethn,
     updater,
-    DONATION_LINK)
+    DONATION_LINK,
+)
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
@@ -236,7 +237,7 @@ def start(update: Update, context: CallbackContext):
                                 url="https://t.me/YARBotUpdates",
                             ),
                         ],
-                        #Getting Started guide link!
+                        # Getting Started guide link!
                         [
                             InlineKeyboardButton(
                                 text="🗄 Source code",
@@ -576,7 +577,7 @@ def donate(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
-#Owner Id and Donation link should be changed here!
+        # Owner Id and Donation link should be changed here!
         if DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
