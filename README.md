@@ -2,7 +2,7 @@
   <img src="https://telegra.ph/file/7586f0bff49e9c74d092c.png">
 </p>
 
-# YAR Manager Bot 
+# YAR Manager Bot
 
 A telegram bot, based on [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot) to manage groups of YAR and YAIF.
 
@@ -16,5 +16,5 @@ A telegram bot, based on [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaR
 
 
 ## Credits 📍
-* Well, it's all in the commit history 
+* Well, it's all in the commit history
 Feel free to open pull requests should any be missing.
