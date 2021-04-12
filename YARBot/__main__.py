@@ -625,7 +625,7 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 def main():
 
-    if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
+    if (SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str) and not WEBHOOK):
         try:
             dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I am now online!")
         except Unauthorized:
