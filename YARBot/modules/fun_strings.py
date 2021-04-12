@@ -1,5 +1,5 @@
 RUN_STRINGS = (
-    "Now you see me, now you don't." "ε=ε=ε=ε=┌(;￣▽￣)┘",
+    "Now you see me, now you don't.",
     "Get back here!",
     "REEEEEEEEEEEEEEEEEE!!!!!!!",
     "Look out for the wall!",
@@ -8,7 +8,6 @@ RUN_STRINGS = (
     "Chotto matte!",
     "Yare yare daze",
     "*Naruto run activated*",
-    "*Nezuko run activated*",
     "Hey take responsibilty for what you just did!",
     "May the odds be ever in your favour.",
     "Run everyone, they just dropped a bomb 💣💣",
@@ -62,18 +61,18 @@ SLAP_TEMPLATES = (
     "{user1} sent {user2} down the memory hole.",
     "{user2} was a mistake. - '{user1}' ",
     "{user2} was made redundant.",
-    "{user1} {hits} {user2} with a bat!.",
-    "{user1} {hits} {user2} with a Taijutsu Kick!.",
-    "{user1} {hits} {user2} with X-Gloves!.",
-    "{user1} {hits} {user2} with a Jet Punch!.",
-    "{user1} {hits} {user2} with a Jet Pistol!.",
-    "{user1} {hits} {user2} with a United States of Smash!.",
-    "{user1} {hits} {user2} with a Detroit Smash!.",
-    "{user1} {hits} {user2} with a Texas Smash!.",
-    "{user1} {hits} {user2} with a California Smash!.",
-    "{user1} {hits} {user2} with a New Hampshire Smash!.",
-    "{user1} {hits} {user2} with a Missouri Smash!.",
-    "{user1} {hits} {user2} with a Carolina Smash!.",
+    "{user1} {hits} {user2} with a bat!",
+    "{user1} {hits} {user2} with a Taijutsu Kick!",
+    "{user1} {hits} {user2} with X-Gloves!",
+    "{user1} {hits} {user2} with a Jet Punch!",
+    "{user1} {hits} {user2} with a Jet Pistol!",
+    "{user1} {hits} {user2} with a United States of Smash!",
+    "{user1} {hits} {user2} with a Power bomb!",
+    "{user1} {hits} {user2} with a Choke Slam!",
+    "{user1} {hits} {user2} with a Superman Punch!",
+    "{user1} {hits} {user2} with a WWE move!",
+    "{user1} {hits} {user2} with a Pichkari!",
+    "{user1} {hits} {user2} with a Hulk Smash!",
     "{user1} {hits} {user2} with a King Kong Gun!.",
     "{user1} {hits} {user2} with a baseball bat - metal one.!.",
     "*Serious punches {user2}*.",
@@ -91,13 +90,6 @@ SLAP_TEMPLATES = (
     "{user1} pokes {user2} with a stun gun!",
     "{user2} is secretly a Furry!",
     "Hey Everybody! {user1} is asking me to be mean!",
-    "( ･_･)ﾉ⌒●~* (･.･;) <-{user2}",
-    "Take this {user2}\n(ﾉﾟДﾟ)ﾉ ))))●~* ",
-    "Here {user2} hold this\n(｀・ω・)つ ●~＊",
-    "( ・_・)ノΞ●~*  {user2}\nDieeeee!!.",
-    "( ・∀・)ｒ鹵~<≪巛;ﾟДﾟ)ﾉ\n*Bug sprays {user2}*.",
-    "( ﾟДﾟ)ﾉ占~<巛巛巛.\n-{user2} You pest!",
-    "( う-´)づ︻╦̵̵̿╤── \(˚☐˚”)/ {user2}.",
     "{user1} {hits} {user2} with a {item}.",
     "{user1} {hits} {user2} in the face with a {item}.",
     "{user1} {hits} {user2} around a bit with a {item}.",
@@ -112,32 +104,27 @@ SLAP_TEMPLATES = (
     "Nyaan ate {user2}'s leg. *nomnomnom*",
     "{user1} {throws} a master ball at {user2}, resistance is futile.",
     "{user1} hits {user2} with an action beam...bbbbbb (ง・ω・)ง ====*",
-    "{user1} ara ara's {user2}.",
-    "{user1} ora ora's {user2}.",
-    "{user1} muda muda's {user2}.",
-    "{user2} was turned into a Jojo reference!",
+    "{user1} slaps {user2}.",
+    "{user1} punches {user2}.",
+    "{user1} kicks {user2}.",
     "{user1} hits {user2} with {item}.",
     "Round 2!..Ready? .. FIGHT!!",
     "WhoPixel will oof {user2} to infinity and beyond.",
     "{user2} ate a bat and discovered a new disease.",
     "{user1} folded {user2} into a paper plane",
     "{user1} served {user2} some bat soup.",
-    "{user2} was sent to his home, the planet of the apes.",
+    "{user2} was sent to their home, the planet of the apes.",
     "{user1} kicked {user2} out of a moving train.",
-    "{user2} just killed John Wick’s dog.",
-    "{user1} performed an Avada Kedavra spell on {user2}.",
+    "{user2} was knocked out!",
+    "{user1} performed an Aabra Ka Daabra spell on {user2}.",
     "{user1} subjected {user2} to a fiery furnace.",
-    "Sakura Haruno just got more useful than {user2}",
     "{user1} unplugged {user2}'s life support.",
     "{user1} subscribed {user2}' to 5 years of bad internet.",
     "You know what’s worse than Dad jokes? {user2}!",
     "{user1} took all of {user2}'s cookies.",
-    "{user2} wa mou.......Shindeiru! - {user1}.",
-    "{user2} lost his race piece!",  # No game no life reference
+    "{user2} lost their race piece!",  # No game no life reference
     "Shut up {user2}, you are just {user2}.",  # No game no life reference
-    "{user1} hits {user2} with Aka si anse!",  # No game no life reference
-    "@NeoTheKitty scratches {user2}",  # Pixels pet cat - @NeoTheKitty
-    "Majin buu ate {user2}",  # Dbz
+    "{user1} hits {user2} with zordar mukka!",  # No game no life reference
     "Goblin slayer slays {user2}",  # Goblin Slayer
 )
 
@@ -167,18 +154,17 @@ PAT_TEMPLATES = (
     "Pat pat, {user2} honto kawaii ne!",
     "{user1} headpats {user2} at 420apm",
     "{user1} pats {user2} friendlily",
-    "{user2} uses HEADPATS? O KAWAII KOTO",
     "*headpats.gif intensifies for {user2}*",
 )
 
 PAT_GIFS = (
-    "CgACAgQAAxkBAALRX19Xs7tBdOH1gQwS_rglVRkTbgVYAAKEAgACmQn9UWlyGa_xy9_aGwQ",
-    "CgACAgEAAxkBAALRYF9Xs8EnhsDfDpld3ILoqTbzDmwxAAJFAAOJxjlHECanwn69E5QbBA",
+    "CgACAgQAAx0CRoG62AACBVxgbaLCls9bS47Fr2Rpz2TO7aUvZgACKAIAAsMAAZRS_FUVC3mnImAeBA",
+    "CgACAgQAAx0CRoG62AACBVFgbaJDllsbHoL5EYzyFmOAAbMNlwACRQIAAt4llVI3m5Nx-nTNPR4E",
 )
 
 PAT_STICKERS = (
-    "CAACAgQAAxkBAALRWV9Xs4HH0XaXfhZe-jWaZoXfs-IsAAJYAwACdDgSEHYOt4KvL02oGwQ",
-    "CAACAgQAAxkBAALRXF9Xs6XmIeDbnoL1wiDky0TdX-CvAAKKAQAC1TMzC9A3CtiT2rqVGwQ",
+    "CAACAgUAAx0CRoG62AACBAhgdF99AS9sgpcU-R8ySgXyd6DX4AAC8gEAAsXPfwlXmCx3PvxL7R4E",
+    "CAACAgQAAx0CRoG62AACBuRgdF_JA6NYYMrq4nFg6LT2pv9-iwACOw0AAkJZ_QTkp1zj176Vrx4E",
 )
 
 PING_STRING = (

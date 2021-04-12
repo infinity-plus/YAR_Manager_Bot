@@ -1,4 +1,7 @@
-import random, html
+import random
+import html
+from datetime import datetime
+import humanize
 
 from YARBot import dispatcher
 from YARBot.modules.disable import (
@@ -80,10 +83,10 @@ def reply_afk(update: Update, context: CallbackContext):
     userc = update.effective_user
     userc_id = userc.id
     if message.entities and message.parse_entities(
-        [MessageEntity.TEXT_MENTION, MessageEntity.MENTION]
+        [MessageEntity.TEXT_MENTION, MessageEntity.MENTION],
     ):
         entities = message.parse_entities(
-            [MessageEntity.TEXT_MENTION, MessageEntity.MENTION]
+            [MessageEntity.TEXT_MENTION, MessageEntity.MENTION],
         )
 
         chk_users = []
@@ -128,12 +131,17 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         user = sql.check_afk_status(user_id)
         if int(userc_id) == int(user_id):
             return
+
+        time = humanize.naturaldelta(datetime.now() - user.time)
+
         if not user.reason:
-            res = "{} is afk".format(fst_name)
+            res = "{} is afk.\n\nLast seen {} ago.".format(fst_name, time)
             update.effective_message.reply_text(res)
         else:
-            res = "{} is afk.\nReason: <code>{}</code>".format(
-                html.escape(fst_name), html.escape(user.reason)
+            res = "{} is afk.\nReason: <code>{}</code>\n\nLast seen {} ago.".format(
+                html.escape(fst_name),
+                html.escape(user.reason),
+                time,
             )
             update.effective_message.reply_text(res, parse_mode="html")
 
@@ -146,7 +154,7 @@ When marked as AFK, any mentions will be replied to with a message to say you're
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
 AFK_REGEX_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(r"^(?i)brb(.*)$"), afk, friendly="afk"
+    Filters.regex(r"^(?i)brb(.*)$"), afk, friendly="afk",
 )
 NO_AFK_HANDLER = MessageHandler(Filters.all & Filters.group, no_longer_afk)
 AFK_REPLY_HANDLER = MessageHandler(Filters.all & Filters.group, reply_afk)
