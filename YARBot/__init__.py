@@ -73,9 +73,9 @@ if ENV:
     CERT_PATH = os.environ.get("CERT_PATH")
     API_ID = os.environ.get("API_ID", None)
     API_HASH = os.environ.get("API_HASH", None)
-    DB_URL = os.environ.get("DATABASE_URL")
-    if DB_URL.startswith("postgres://"):
-        DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
+    DB_URI = os.environ.get("DATABASE_URL")
+    if DB_URI.startswith("postgres://"):
+        DB_URI = DB_URI.replace("postgres://", "postgresql://", 1)
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
     NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
@@ -149,9 +149,9 @@ else:
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
 
-    DB_URL = Config.SQLALCHEMY_DATABASE_URI
-    if DB_URL.startswith("postgres://"):
-        DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
+    DB_URI = Config.SQLALCHEMY_DATABASE_URI
+    if DB_URI.startswith("postgres://"):
+        DB_URI = DB_URI.replace("postgres://", "postgresql://", 1)
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
     NO_LOAD = Config.NO_LOAD
