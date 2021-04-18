@@ -78,19 +78,19 @@ __help__ = """
 
     # Get the dispatcher to register handlers
     #dispatcher = updater.dispatcher
-
     # on different commands - answer in Telegram
     #dispatcher.add_handler(CommandHandler("start", start))
-    SET_REMINDER = DisableAbleCommandHandler("reminder", set_reminder)
     #dispatcher.add_handler(CommandHandler("help", help))
-    dispatcher.add_handler(SET_REMINDER)
-    dispatcher.add_handler(CommandHandler("set", set_timer))
-    dispatcher.add_handler(CommandHandler("unset", unset))
-
     
-
+    SET_REMINDER = DisableAbleCommandHandler("reminder", set_reminder)
+    SET_TIMER = CallbackQueryHandler(set_timer, pattern="set")
+    SET_UNSET = CallbackQueryHandler(unset, pattern="unset")
+    
+    dispatcher.add_handler(SET_REMINDER)
+    dispatcher.add_handler(SET_TIMER)
+    dispatcher.add_handler(SET_UNSET)
+    
     # Block until you press Ctrl-C or the process receives SIGINT, SIGTERM or
-    # SIGABRT. This should be used most of the time, since start_polling() is
     # non-blocking and will stop the bot gracefully.
     updater.idle()
 
