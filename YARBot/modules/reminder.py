@@ -83,8 +83,8 @@ __help__ = """
     #dispatcher.add_handler(CommandHandler("help", help))
     
     SET_REMINDER = DisableAbleCommandHandler("reminder", set_reminder)
-    SET_TIMER = CallbackQueryHandler(set_timer, pattern="set")
-    SET_UNSET = CallbackQueryHandler(unset, pattern="unset")
+    SET_TIMER = CommandHandler("set",set_timer)
+    SET_UNSET = CommandHandler("unset",unset)
     
     dispatcher.add_handler(SET_REMINDER)
     dispatcher.add_handler(SET_TIMER)
