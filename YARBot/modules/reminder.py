@@ -83,6 +83,7 @@ __help__ = """
     #dispatcher.add_handler(CommandHandler("start", start))
     SET_REMINDER = DisableAbleCommandHandler("reminder", set_reminder)
     #dispatcher.add_handler(CommandHandler("help", help))
+    dispatcher.add_handler(SET_REMINDER)
     dispatcher.add_handler(CommandHandler("set", set_timer))
     dispatcher.add_handler(CommandHandler("unset", unset))
 
