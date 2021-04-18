@@ -90,8 +90,11 @@ __help__ = """
     dispatcher.add_handler(SET_TIMER)
     dispatcher.add_handler(SET_UNSET)
     
-    # Block until you press Ctrl-C or the process receives SIGINT, SIGTERM or
-    # non-blocking and will stop the bot gracefully.
-    updater.idle()
-
+    __mod_name__ = "Reminder"
+    __command_list__ = ["reminder"]
+    __handlers__ = [
+                    SET_REMINDER,
+                    SET_TIMER,
+                    SET_UNSET
+                   ]
 
