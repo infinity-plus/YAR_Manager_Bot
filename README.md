@@ -16,5 +16,8 @@ A telegram bot, based on [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaR
 
 
 ## Credits 📍
-* Well, it's all in the commit history
-Feel free to open pull requests should any be missing.
+All credits go to:
+
+@AnimeKaizoku, @TsunayoshiSawada and his team for developing the awesome [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot)
+
+@PaulSonOfLars for his [tgbot](https://github.com/PaulSonOfLars/tgbot)
