@@ -1,8 +1,8 @@
 {
     "name": "YARBot",
-    "description": "An Anime themed Telegram group management bot.",
-    "keywords": ["telegram", "anime", "group", "manager", "Saitama"],
-    "repository": "https://github.com/AnimeKaizoku/YARBot",
+    "description": "A Telegram group management bot based on SaitamaRobot.",
+    "keywords": ["telegram", "group", "manager", "YAR"],
+    "repository": "https://github.com/YAIFoundation/YAR_Manager_Bot",
     "stack": "container",
     "env": {
         "TOKEN": {
@@ -152,7 +152,7 @@
         }
     },
     "formation": {
-        "worker": {
+        "web": {
             "quantity": 1,
             "size": "free"
         }
