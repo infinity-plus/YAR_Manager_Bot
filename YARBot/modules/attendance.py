@@ -66,35 +66,76 @@ def end_attendance(update, context):
     query.answer()
     if (context.chat_data['id'] != update.effective_chat.id):
         return
-    attendee_list = "\n- ".join([
-        mention_markdown(id, name)
-            for id, name in context.chat_data['attendees'].items()
-    ])
-    context.bot.edit_message_text(
-        text="Attendance is over. " +
-        str(len(context.chat_data['attendees'])) +
-        " member(s) marked attendance.\n" +
-        "Here is the list:\n- " + attendee_list,
-        chat_id=context.chat_data['message'].chat_id,
-        message_id=context.chat_data['message'].message_id,
-        parse_mode=ParseMode.MARKDOWN,
-    )
+    if len(context.chat_data['attendees'].items()) > 0:
+        attendee_list = "\n- ".join([
+            mention_markdown(id, name)
+                for id, name in context.chat_data['attendees'].items()
+        ])
+        context.bot.edit_message_text(
+            text="Attendance is over. " +
+            str(len(context.chat_data['attendees'])) +
+            " member(s) marked attendance.\n" +
+            "Here is the list:\n- " + attendee_list,
+            chat_id=context.chat_data['message'].chat_id,
+            message_id=context.chat_data['message'].message_id,
+            parse_mode=ParseMode.MARKDOWN,
+        )
+    else:
+        context.bot.edit_message_text(
+            text="Attendance is over. No one was present.",
+            chat_id=context.chat_data['message'].chat_id,
+            message_id=context.chat_data['message'].message_id,
+        )
     context.chat_data['flag'] = 0
     context.chat_data['attendees'].clear()
 
+@user_admin
+def end_attendance_cmd(update, context):
+    if ('flag' not in context.chat_data) and (context.chat_data['flag'] != 1):
+        update.message.reply_text(
+            "No Attendance is goind on.",
+        )
+    else:
+        if (context.chat_data['id'] != update.effective_chat.id):
+            return
+        if len(context.chat_data['attendees'].items()) > 0:
+            attendee_list = "\n- ".join([
+                mention_markdown(id, name)
+                for id, name in context.chat_data['attendees'].items()
+            ])
+            context.bot.edit_message_text(
+                text="Attendance is over. " +
+                str(len(context.chat_data['attendees'])) +
+                " member(s) marked attendance.\n" +
+                "Here is the list:\n- " + attendee_list,
+                chat_id=context.chat_data['message'].chat_id,
+                message_id=context.chat_data['message'].message_id,
+                parse_mode=ParseMode.MARKDOWN,
+            )
+        else:
+            context.bot.edit_message_text(
+                text="Attendance is over. No one was present.",
+                chat_id=context.chat_data['message'].chat_id,
+                message_id=context.chat_data['message'].message_id,
+            )
+        context.chat_data['flag'] = 0
+        context.chat_data['attendees'].clear()
 
 __help__ = """
 - `/attendance`*:* Start the attendance
+- `/end_attendance`*:* End the attendance
 """
 
 START_ATTENDANCE = DisableAbleCommandHandler("attendance", start_attendance)
 MARK_ATTENDANCE = CallbackQueryHandler(mark_attendance, pattern="present")
 END_ATTENDANCE = CallbackQueryHandler(end_attendance, pattern="end_attendance")
+END_ATTENDANCE_CMD = DisableAbleCommandHandler("end_attendance", end_attendance_cmd)
 
 dispatcher.add_handler(START_ATTENDANCE)
 dispatcher.add_handler(MARK_ATTENDANCE)
 dispatcher.add_handler(END_ATTENDANCE)
+dispatcher.add_handler(END_ATTENDANCE_CMD)
 
 __mod_name__ = "Attendance"
-__command_list__ = ["attendance"]
-__handlers__ = [START_ATTENDANCE, END_ATTENDANCE]
+__command_list__ = ["attendance", "end_attendance"]
+__handlers__ = [START_ATTENDANCE, END_ATTENDANCE, END_ATTENDANCE_CMD]
