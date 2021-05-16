@@ -10,12 +10,12 @@ from YARBot.modules.helper_funcs.chat_status import user_admin, user_admin_no_re
 
 
 # Enable logging --Commented by Shailja
-"""
+'''
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
 )
 logger = logging.getLogger(__name__)
-"""
+'''
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
