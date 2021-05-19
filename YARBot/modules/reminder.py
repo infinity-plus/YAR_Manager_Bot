@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 # context. Error handlers also receive the raised TelegramError object in error.
 def set_reminder(update: Update, _: CallbackContext) -> None:
     update.message.reply_text('Hi! Use /set <seconds> to set a timer')
+    update.message.reply_text('Hi! Use /setmsg <message> to set a timer message')
 
 
 def alarm(context: CallbackContext) -> None:
@@ -68,6 +69,22 @@ def unset(update: Update, context: CallbackContext) -> None:
     text = 'Timer successfully cancelled!' if job_removed else 'You have no active timer.'
     update.message.reply_text(text)
 
+def setmsg (update: Update, context: CallbackContext) -> None:
+    """Add a job to the queue."""
+    chat_id = update.message.chat_id
+    try:
+        # args[0] should contain the msg for the timer
+        due = str(context.args[0])
+        if due == "":
+            update.message.reply_text('Please Enter some msg')
+            return
+
+        text = 'YAY! You have Successfully set the message.'
+        update.message.reply_text(text)
+
+    except (IndexError, ValueError):
+        update.message.reply_text('Usage: /setmsg <message>')
+
 
 __help__ = """
 - `/reminder`*:* Set the reminder using /set <seconds>
@@ -85,16 +102,19 @@ __help__ = """
     SET_REMINDER = DisableAbleCommandHandler("reminder", set_reminder)
     SET_TIMER = CommandHandler("set",set_timer)
     SET_UNSET = CommandHandler("unset",unset)
+    SET_MSG = CommandHandler("setmsg", setmsg)
     
     dispatcher.add_handler(SET_REMINDER)
     dispatcher.add_handler(SET_TIMER)
     dispatcher.add_handler(SET_UNSET)
+    dispatcher.add_handler(SET_MSG)
     
     __mod_name__ = "Reminder"
     __command_list__ = ["reminder"]
     __handlers__ = [
                     SET_REMINDER,
                     SET_TIMER,
-                    SET_UNSET
+                    SET_UNSET,
+                    SET_MSG
                    ]
 
